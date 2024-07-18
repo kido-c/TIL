@@ -230,3 +230,39 @@ console.log(user[library2property]); // 369
 그렇기 때문에 랜덤값, 네임스페이스로 키값을 생성하는 것과 symbol로 생성하는 것을 비슷하게 쓸 수 있다.  
 하지만 차이점이 분명히 존재한다. 랜덤값, 네임스페이스는 동일한 값을 찾이 어려울뿐이지 아예 충동하지 않을 가능성이 없다는것은 아니다.  
 반면에 symbol을 항상 고유하다는 보장을 할 수 있다.
+
+## Symbol 객체
+
+Symbol은 다음과 같은 프로퍼티와 메소드를 가지고 있다.
+legth와 prototype을 제외한 프로터피를 `wel-known Symbol`이라고 한다.
+
+![alt text](image.png)
+
+`wel-known Symbol`는 자바스크립트 엔진에 상수로 존재하고 있다.  
+ 그래서 해당 값들을 참조하여 특정한 처리를 한다.  
+ 예를 들면 다음과 같다.
+
+### [4.1 Symbol.iterator](../iteration/iteration.md)
+
+어떠한 객체가 Symbol.iterator를 프로퍼티 key로 사용한 메서드가 있다면, 자바스크립트 엔진은  
+해당 객체가 이터레이션 프로토콜을 따르는 것으로 간주한다. 그래서 순회가 가능하도록 동작한다.
+
+기본적으로 다음과 같은 객체들이 기본적으로 Symbol.iterator 키로 메서드가 내장되어있다.
+
+> Array
+> Array.prototype[Symbol.iterator]
+>
+> String
+> String.prototype[Symbol.iterator]
+>
+> Map
+> Map.prototype[Symbol.iterator]
+>
+> Set
+> Set.prototype[Symbol.iterator]
+>
+> DOM data structures
+> NodeList.prototype[Symbol.iterator] HTMLCollection.prototype[Symbol.iterator]
+>
+> arguments
+> arguments[Symbol.iterator]
